@@ -16,7 +16,9 @@ namespace _4_CaracteresLimitados
         private void entradaTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             contadorTextBlock.Text = $"{entradaTextBox.Text.Length}/{entradaTextBox.MaxLength}";
-            entradaTextBox.IsReadOnly = entradaTextBox.Text.Length == entradaTextBox.MaxLength;
+
+            if (entradaTextBox.Text.Length == entradaTextBox.MaxLength)
+                entradaTextBox.IsReadOnly = true;
         }
     }
 }
